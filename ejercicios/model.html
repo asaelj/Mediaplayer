@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+</head>
+<body>
+
+<script>
+    let name = 'Julio'
+    function PersonaClosure(){
+        let name
+        let age        
+        return{
+            getName: function(){
+                return name
+            },
+            setName: function(n){
+                name = n
+            }
+        }
+    }
+
+    function PersonaProto(name, age){        
+        this.name = name
+        this.age = age
+    }
+    PersonaProto.prototype.getName = function() {
+        return this.name
+    }
+    PersonaProto.prototype.setName = function(n){
+        this.name = n
+    }
+
+    //Uso del closure
+    const persona = PersonaClosure()
+    persona.setName('Asael')
+    console.log(persona.getName())
+
+    //Uso del prototype
+    personaProto = new PersonaProto()
+    personaProto.setName('Asael')
+    console.log(personaProto.getName())
+
+</script>
+</body>
+</html>

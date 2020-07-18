@@ -1,0 +1,24 @@
+{
+  "name": "platzi-media-player",
+  "version": "1.0.0",
+  "description": "Proyecto del curso profesional de JavaScript de la Escuela de JavaScript de Platzi.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html"
+  },
+  "keywords": [
+    "platzi"
+  ],
+  "author": "Asael Lara Rodriguez <asael.lr.23@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.9.3"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "dependencies": {
+    "@asaeljs/mediaplayer": "^1.0.0"
+  }
+}

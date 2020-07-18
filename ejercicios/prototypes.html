@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //Primer ejercicio
+// const zelda = {
+//     name: 'Zelda'
+// }
+// zelda.saludar = function(){
+//     console.log(`Hola soy ${this.name}`)
+// }
+// const link = {
+//     name: 'Link'
+// }
+// link.saludar = function(){
+//     console.log(`Hola soy ${this.name}`)
+// }
+
+// zelda.saludar()
+// link.saludar()
+
+
+//Seamos un poco mas eficientes
+// function Hero(name){
+//     const hero = {
+//         name: name
+//     }
+//     hero.saludar = function(){
+//         console.log(`Hola soy ${this.name}`)
+//     }
+//     return hero
+// }
+
+// const zelda = Hero("Zelda")
+// zelda.saludar()
+
+// const link = Hero("Link")
+// link.saludar()
+
+
+//Aun mas eficentes
+// const heroMethods = {
+//     saludar: function(){
+//         console.log(`Hola soy ${this.name}`)
+//     },    
+// }
+
+// function Hero(name){
+//     const hero = {
+//         name: name
+//     }
+//     hero.saludar = heroMethods.saludar
+//     return hero
+// }
+// const zelda = Hero("Zelda")
+// zelda.saludar()
+
+// const link = Hero("Link")
+// link.saludar()
+
+
+
+//Object.create
+// const heroMethods = {
+//     saludar: function(){
+//         console.log(`Hola soy ${this.name}`)
+//     } 
+// }
+// function Hero(name){
+//     const hero = Object.create(heroMethods)
+//     hero.name = name    
+//     return hero
+// }
+
+// const zelda = Hero("Zelda")
+// zelda.saludar()
+
+// const link = Hero("Link")
+// link.saludar()
+
+
+//Otra forma mas cerca del proto
+
+// function Hero(name){
+//     const hero = Object.create(Hero.prototype)
+//     hero.name = name    
+//     return hero
+// }
+// Hero.prototype.saludar = function(){
+//     console.log(`Hola soy ${this.name}`)
+// }
+
+// const zelda = Hero("Zelda")
+// zelda.saludar()
+
+// const link = Hero("Link")
+// link.saludar()
+
+
+//Usando new
+function Hero(name){
+    //New implicitamente hace esto, parecido XD
+    //this = Object.create(Hero.prototype)
+    this.name = name
+    
+    //Esto tambien es implicito
+    //return this
+}
+Hero.prototype.saludar = function(){
+    console.log(`Hola soy ${this.name}`)
+}
+
+const zelda = new Hero("Zelda")
+zelda.saludar()
+
+const link = new Hero("Link")
+link.saludar()
+</script>
+</body>
+</html>
